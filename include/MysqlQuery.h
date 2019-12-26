@@ -7,12 +7,12 @@
 class MysqlQuery
 {
 protected:
-    MYSQL* conn;
     bool _isConnected;
 
 public:
-    MysqlQuery(std::string server = "localhost", std::string user = "root", std::string password = "password", std::string database = "mysql");
+    MysqlQuery(std::string server = "localhost", std::string user = "root", std::string password = "password", std::string database = "Luojia");
     
+    MYSQL* conn;
     bool isConnected();
 };
 

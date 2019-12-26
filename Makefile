@@ -6,12 +6,12 @@ CFLAGS = -I$(IDIR) -L$(LDIR)
 ODIR = obj
 SDIR = src
 
-LIBS = -lmysqlclient -lpthread
+LIBS = -lmysqlclient -lpthread -lboost_system
 
-_DEPS = MysqlQuery.h Server.h
+_DEPS = MysqlQuery.h websocket_server.h server.h
 DEPS = $(patsubst %, $(IDIR)/%, $(_DEPS))
 
-_OBJ = MysqlQuery.o Server.o main.o
+_OBJ = MysqlQuery.o websocket_server.o server.o main.o
 OBJ = $(patsubst %, $(ODIR)/%, $(_OBJ))
 
 $(ODIR)/%.o: $(SDIR)/%.cpp $(DEPS)
